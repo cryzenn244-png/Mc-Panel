@@ -1,10 +1,8 @@
 .env
-.env.*
-!.env.example
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
 node_modules/
-dist/
-build/
-storage/
 logs/
+storage/
 *.log
-.DS_Store

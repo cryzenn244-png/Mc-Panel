@@ -1,0 +1,14 @@
+{
+  "name": "mc-panel",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MC Panel starter application: PHP UI and Node.js API",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.mjs",
+    "check": "node --check backend/server.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

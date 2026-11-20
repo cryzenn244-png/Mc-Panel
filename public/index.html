@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>MC Panel</title>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">MC</div><div><strong>MC PANEL</strong><small>HOSTING CONTROL</small></div></div>
+      <div class="nav-label">WORKSPACE</div>
+      <button class="nav active" data-view="overview"><span>◈</span> Overview</button>
+      <button class="nav" data-view="minecraft"><span>▦</span> Minecraft</button>
+      <button class="nav" data-view="bots"><span>⌘</span> Discord Bots</button>
+      <button class="nav" data-view="vps"><span>▤</span> VPS Instances</button>
+      <div class="nav-label">INFRASTRUCTURE</div>
+      <button class="nav" data-view="nodes"><span>◉</span> Nodes</button>
+      <button class="nav" data-view="eggs"><span>◇</span> Eggs & Nests</button>
+      <button class="nav" data-view="backups"><span>▧</span> Backups</button>
+      <div class="sidebar-bottom"><span class="status-dot"></span><span>Panel API</span><span id="api-status" class="muted">Checking…</span></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><div class="eyebrow">CONTROL CENTER / <span id="crumb">OVERVIEW</span></div><h1 id="page-title">Overview</h1></div><div class="top-actions"><span class="pill"><span class="status-dot"></span> Local environment</span><button id="refresh" class="icon-button" title="Refresh system stats">↻</button></div></header>
+      <section id="notice" class="notice hidden"></section>
+      <section id="overview" class="view">
+        <div class="hero"><div><div class="eyebrow bright">INFRASTRUCTURE AT A GLANCE</div><h2>Your hosting.<br><span>One control plane.</span></h2><p>MC Panel bootstrap is online. Live host information is collected from this machine.</p><div class="hero-actions"><button class="primary" data-view="nodes">Explore local node <span>↗</span></button><button class="secondary" data-view="eggs">Eggs & Nests</button></div></div><div class="orb-wrap"><div class="orb"><div class="orb-core">MC</div></div><div class="orbit-label label-a">LOCAL NODE</div><div class="orbit-label label-b">API ONLINE</div></div></div>
+        <div class="section-heading"><div><h3>System overview</h3><p>Live operating-system metrics · refreshes on demand</p></div><span class="updated" id="last-updated">Not loaded</span></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>CPU THREADS</span><span class="stat-icon">⌁</span></div><div class="stat-value" id="cpu-count">—</div><div class="stat-foot" id="cpu-model">Detecting processor</div></article>
+          <article class="stat-card"><div class="stat-top"><span>MEMORY TOTAL</span><span class="stat-icon">▤</span></div><div class="stat-value" id="mem-total">—</div><div class="meter"><span id="mem-meter"></span></div><div class="stat-foot" id="mem-foot">Waiting for telemetry</div></article>
+          <article class="stat-card"><div class="stat-top"><span>HOST UPTIME</span><span class="stat-icon">◷</span></div><div class="stat-value" id="host-uptime">—</div><div class="stat-foot" id="host-name">Detecting host</div></article>
+          <article class="stat-card"><div class="stat-top"><span>PLATFORM</span><span class="stat-icon">⌘</span></div><div class="stat-value compact" id="platform">—</div><div class="stat-foot" id="platform-version">Detecting kernel</div></article>
+        </div>
+        <div class="bottom-grid"><article class="panel-card"><div class="card-heading"><div><h3>Deployment modules</h3><p>Implementation status</p></div><span class="tag">BOOTSTRAP</span></div><div class="module-list"><div><span class="module-icon">◈</span><span><b>Web UI & API</b><small>Working starter service</small></span><span class="state good">ONLINE</span></div><div><span class="module-icon">▤</span><span><b>PHP runtime</b><small>Installer prerequisite; not a Laravel panel</small></span><span class="state warn">RUNTIME</span></div><div><span class="module-icon">⬡</span><span><b>Docker provider</b><small>Not configured in this bootstrap</small></span><span class="state pending">PENDING</span></div><div><span class="module-icon">▣</span><span><b>QEMU / libvirt</b><small>Requires supported virtualization host</small></span><span class="state pending">PENDING</span></div></div></article><article class="panel-card host-card"><div class="card-heading"><div><h3>Local node</h3><p>Detected host capacity</p></div><span class="live"><i></i> LIVE</span></div><div class="host-row"><span>Memory in use</span><b id="mem-used">—</b></div><div class="host-row"><span>Memory available</span><b id="mem-free">—</b></div><div class="host-row"><span>Load average</span><b id="load-average">—</b></div><div class="host-row"><span>Node.js runtime</span><b id="node-version">—</b></div><div class="host-row"><span>Panel process uptime</span><b id="panel-uptime">—</b></div></article></div>
+      </section>
+      <section id="placeholder" class="view hidden"><div class="empty-panel"><div class="empty-symbol">◇</div><h2 id="placeholder-title">Module not configured</h2><p id="placeholder-text">This starter panel only exposes real system health metrics. This module is not implemented yet, so no fake servers or VPS instances are shown.</p><button class="secondary" data-view="overview">Return to overview</button></div></section>
+      <footer><span>MC PANEL <b>BOOTSTRAP</b></span><span>Secure-by-default starter · <span id="footer-time"></span></span></footer>
+    </main>
+  </div>
+</body>
+</html>
